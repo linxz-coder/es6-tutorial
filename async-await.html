@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve('成功');
+                reject('失败');
+            }, 1000);
+        });
+
+        // await 要放在 async 函数中
+        async function main(){
+            try{
+                let result = await p;
+                console.log(result);
+            }catch(e){
+                console.log(e);
+            }
+        }
+
+        // 调用 async 函数
+        main();
+    </script>
+</body>
+</html>

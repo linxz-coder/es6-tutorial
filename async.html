@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function fn() {
+        // 关于promise对象的返回结果：
+        // 返回的结果只要不是promise对象，都是成功的结果，即Promise状态是resolve/fufilled状态
+        // 返回的结果是promise对象，才会根据promise对象的状态来决定
+            return '成功';
+        // 返回结果也可以抛出异常，Promise状态是rejected
+        // throw '失败';
+        }
+
+
+        const result = fn();
+        console.log(result);
+
+        result.then((value) => {
+            console.log(value);
+        }).catch((reason) => {
+            console.log(reason);
+        });
+    </script>
+</body>
+</html>

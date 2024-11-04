@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实例化promise对象，参数是一个函数，函数有两个参数，一个是成功的回调，一个是失败的回调
+        const p = new Promise((resolve, reject) => {
+            // 异步操作
+            setTimeout(() => {
+                // 成功
+                resolve('成功');
+                // 失败
+                reject('失败');
+            }, 1000);
+        });
+
+        // then方法，参数是两个函数，第一个是成功的回调，第二个是失败的回调
+        p.then((value) => {
+            console.log(value);
+        }, (reason) => {
+            console.log(reason);
+        });
+    </script>
+</body>
+</html>
